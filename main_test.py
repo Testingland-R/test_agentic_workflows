@@ -1,3 +1,4 @@
+import subprocess, sys
 import pytest
 from main import Main
 
@@ -21,3 +22,13 @@ def test_main_run(capsys):
     main.run()
     captured = capsys.readouterr()
     assert captured.out == "The colour is blue.\n"
+
+def test_main_script():
+    """Test the main.py script execution."""
+    result = subprocess.run(
+        [sys.executable, "main.py"],
+        capture_output=True,
+        text=True,
+        check=True
+    )
+    assert result.returncode == 0
