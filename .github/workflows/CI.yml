@@ -1,0 +1,20 @@
+name: Executable Workflow
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to run the workflow on'
+        required: true
+        type: choice
+        options:
+          ${{ github.event.repository.branches }}
+
+
+jobs:
+  call-reusable-workflow:
+    uses: roquevaamonde/workflows/.github/workflows/python_CI.yml@main
+    with:
+      python-version: '3.11'
+      branch: ${{ github.event.inputs.branch }}
+    secrets:
+      repo_token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}

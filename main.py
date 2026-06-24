@@ -21,7 +21,6 @@ class Main:
         print(self.get_colour())
 
 
-
 if __name__ == "__main__":
     main = Main("pink")
     main.run()
