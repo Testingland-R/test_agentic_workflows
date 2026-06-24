@@ -1,0 +1,8 @@
+jobs:
+  call-reusable-workflow:
+    uses: roquevaamonde/workflows/.github/workflows/python_CI.yml   # si está en el mismo repo
+    # o si está en otro repo:
+    # uses: owner/repo/.github/workflows/ci-python-reusable.yml@main
+    with:
+      python-version: '3.11'
+      
