@@ -7,6 +7,5 @@ jobs:
     uses: roquevaamonde/workflows/.github/workflows/python_CI.yml@main
     with:
       python-version: '3.11'
-      branch: ${{ github.event.inputs.branch }}
     secrets:
       repo_token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}
