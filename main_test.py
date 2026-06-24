@@ -14,3 +14,10 @@ def test_main_get_colour():
 
     main = Main("invalid")
     assert main.get_colour() == "The colour is not in the list."
+
+def test_main_run(capsys):
+    """Test the run method of the Main class."""
+    main = Main("blue")
+    main.run()
+    captured = capsys.readouterr()
+    assert captured.out == "The colour is blue.\n"
