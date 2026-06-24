@@ -4,6 +4,8 @@ on:
 
 jobs:
   call-reusable-workflow:
-    uses: ./.github/workflows/python_CI.yml
+    uses: roquevaamonde/workflows/.github/workflows/python_CI.yml@main
     with:
       python-version: '3.11'
+    secrets:
+      repo_token: ${{ secrets.REUSABLE_WORKFLOW_TOKEN }}
