@@ -1,6 +1,5 @@
 """Colour Validator Tests"""
-import subprocess
-import sys
+
 from colour_validator import ColourValidator
 
 
