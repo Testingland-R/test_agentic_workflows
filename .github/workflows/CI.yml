@@ -4,11 +4,16 @@ on:
   - workflow_dispatch
 
 jobs:
-  call-reusable-workflow:
-    uses: Testingland-R/workflows/.github/workflows/python_CI.yml@2f76782539aec2160b0fef744c8392a77970b68b # main
-    secrets:
-      sonar-token: ${{ secrets.SONAR_TOKEN }}
+  python-tests:
+    uses: Testingland-R/workflows/.github/workflows/python/pytest-scan.yml@main
     with:
       python-version: '3.11'
       test-command: 'pytest --maxfail=1 --cov -v'
+
+  sonarqube-scan:
+    needs: call-python-tests
+    uses: Testingland-R/workflows/.github/workflows/sonarqube-scan.yml@main
+    secrets:
+      sonar-token: ${{ secrets.SONAR_TOKEN }}
+    with:
       sonar-project-key: ${{ vars.SONAR_PROJECT_KEY }}
