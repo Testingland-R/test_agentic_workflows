@@ -10,4 +10,4 @@ jobs:
     with:
       python-version: '3.11'
       test-command: 'pytest --maxfail=1 --cov -v'
-
+      sonar-project-key: ${{ vars.SONAR_PROJECT_KEY }}
