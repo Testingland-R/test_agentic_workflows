@@ -7,6 +7,10 @@
   "pinDigests": true,
   "platformAutomerge": true,
   "dependencyDashboard": true,
+  "automerge": true,
+  "automergeType": "pr",
+  "automergeStrategy": "squash",
+  "requiredStatusChecks": null,
   "packageRules": [
     {
       "matchPackagePatterns": ["*"],
