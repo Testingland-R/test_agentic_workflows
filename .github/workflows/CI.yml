@@ -11,7 +11,7 @@ jobs:
       test-command: 'pytest --maxfail=1 --cov -v'
 
   sonarqube-scan:
-    needs: call-python-tests
+    needs: python-tests
     uses: Testingland-R/workflows/.github/workflows/sonarqube-scan.yml@main
     secrets:
       sonar-token: ${{ secrets.SONAR_TOKEN }}
