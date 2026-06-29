@@ -6,7 +6,7 @@ on:
 
 jobs:
   llamar-aprobador:
-    uses: Testingland-R/workflows/.github/workflows/auto-approve-renovate.yml@main
+    uses: Testingland-R/workflows/.github/workflows/auto-approve-renovate.yml@a1e58a8fa83301104e9b090afce1f36672e1bb40 # main
     permissions:
       pull-requests: write
       contents: read
